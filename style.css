@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -19,7 +19,8 @@
   --line:       rgba(20,18,14,.10);
   --line2:      rgba(26,58,143,.18);
   --font-hd:    'Archivo', sans-serif;
-  --font-mono:  'IBM Plex Mono', monospace;
+  --font-body:  'Lato', sans-serif;
+  --font-mono:  'Lato', sans-serif;
   --max:        min(75vw, 1440px);
 
   /* Цвета футера — инвертируются через тему */
@@ -40,7 +41,7 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-hd);
+  font-family: var(--font-body);
   font-size: calc(16px * var(--scale));
   line-height: 1.6;
   overflow-x: auto;
@@ -176,17 +177,17 @@ html[data-theme="dark"] .carousel-arr {
   background: rgba(13,16,24,.9);
   border-color: rgba(255,255,255,.08);
 }
-.project-title { font-size: calc(25px * var(--scale)); font-weight: 900; color: var(--ink); line-height: 1.05; letter-spacing: -.01em; }
-.project-body { font-family: var(--font-mono); font-size: calc(13px * var(--scale)); color: var(--ink-mid); line-height: 1.9; }
+.project-title { font-family: var(--font-hd); font-size: calc(25px * var(--scale)); font-weight: 900; color: var(--ink); line-height: 1.05; letter-spacing: -.01em; }
+.project-body { font-family: var(--font-body); font-size: calc(13px * var(--scale)); color: var(--ink-mid); line-height: 1.9; }
 /* ── SMALL ROWS ────────────────────────────────── */
 /* ── MISC ──────────────────────────────────────── */
 /* ── TEAM ──────────────────────────────────────── */
 /* ── CONTACT ───────────────────────────────────── */
 .contact-section { padding: 80px 0; border-bottom: 1px solid var(--line); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.contact-desc { font-family: var(--font-mono); font-size: calc(13px * var(--scale)); color: var(--ink-mid); line-height: 1.9; margin: 20px 0 28px; max-width: 360px; }
+.contact-desc { font-family: var(--font-body); font-size: calc(13px * var(--scale)); color: var(--ink-mid); line-height: 1.9; margin: 20px 0 28px; max-width: 360px; }
 .contact-info { display: flex; flex-direction: column; gap: 10px; }
-.contact-info-row { display: flex; gap: 16px; font-family: var(--font-mono); font-size: calc(12.5px * var(--scale)); color: var(--ink-mid); align-items: flex-start; }
+.contact-info-row { display: flex; gap: 16px; font-family: var(--font-body); font-size: calc(12.5px * var(--scale)); color: var(--ink-mid); align-items: flex-start; }
 .contact-info-row .k { color: var(--ink-dim); min-width: 80px; letter-spacing: .1em; flex-shrink: 0; }
 .contact-form { display: flex; flex-direction: column; gap: 14px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -598,6 +599,7 @@ body.portfolio-modal-open {
 }
 
 .portfolio-detail-desc .project-title {
+  font-family: var(--font-hd);
   max-width: 14ch;
   color: var(--ref-text);
   font-size: calc(21px * var(--scale));
@@ -843,6 +845,7 @@ html[data-theme="dark"] .portfolio-video-volume {
 
 .page-home-reference .ref-logo,
 .page-home-reference .ref-footer-brand {
+  font-family: var(--font-hd);
   font-size: 1.36rem;
   font-weight: 900;
   letter-spacing: 0.24em;
@@ -1571,7 +1574,9 @@ html[data-theme="dark"] .page-home-reference .theme-icon-moon {
 }
 
 .page-home-reference .ref-copy h2,
+.page-home-reference .ref-copy-slide h2,
 .page-home-reference .ref-section-head h2 {
+  font-family: var(--font-hd);
   font-size: clamp(1.55rem, 2vw, 2rem);
   line-height: 1.02;
   margin-bottom: 18px;
@@ -1591,6 +1596,18 @@ html[data-theme="dark"] .page-home-reference .theme-icon-moon {
   margin-left: 0;
   margin-right: 0;
   text-align: left;
+}
+
+.page-home-reference .ref-copy p,
+.page-home-reference .ref-copy-list,
+.page-home-reference .ref-project-card p,
+.page-home-reference .ref-project-note-list,
+.page-home-reference .ref-contact-info p,
+.page-home-reference .ref-contact-info dd,
+.page-home-reference .project-body,
+.page-home-reference .ref-form input,
+.page-home-reference .ref-form textarea {
+  font-family: var(--font-body);
 }
 
 .page-home-reference .ref-copy p + p {
@@ -1713,6 +1730,7 @@ html[data-theme="dark"] .page-home-reference .theme-icon-moon {
 }
 
 .page-home-reference .ref-project-card h3 {
+  font-family: var(--font-hd);
   font-size: 0.9rem;
   padding: 0 12px;
   margin-bottom: 6px;
@@ -1845,7 +1863,7 @@ html[data-theme="dark"] .page-home-reference .theme-icon-moon {
 .page-home-reference .ref-form-field-error,
 .page-home-reference .ref-form-status {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.72rem;
   line-height: 1.55;
 }
