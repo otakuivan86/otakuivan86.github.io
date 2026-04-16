@@ -1,10 +1,10 @@
 ﻿const homeUI = (() => {
-  const LS_LANG_KEY = "rawas_lang";
-  const LS_THEME_KEY = "rawas_theme";
+  const LS_LANG_KEY = "aerosolve_lang";
+  const LS_THEME_KEY = "aerosolve_theme";
 
   const translations = {
     uk: {
-      title: "SGM SCION - RAWAS & AEROSOLVE",
+      title: "SGM SCION - Aerosolve",
       "nav.product": "Продукт",
       "nav.cta": "Зв'язатися",
       "sideNav.product": "Продукт",
@@ -139,7 +139,7 @@
       "form.submitFix": "Будь ласка, перевірте форму та виправте помилки."
     },
     en: {
-      title: "SGM SCION - RAWAS & AEROSOLVE",
+      title: "SGM SCION - Aerosolve",
       "nav.product": "Product",
       "nav.cta": "Contact Us",
       "sideNav.product": "Product",
