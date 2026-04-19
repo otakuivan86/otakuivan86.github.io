@@ -1333,7 +1333,7 @@
           message: messageField.value.trim(),
         };
 
-        const response = await fetch("/api/contact", {
+        const response = await fetch("https://formspree.io/f/xgorybzo", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
